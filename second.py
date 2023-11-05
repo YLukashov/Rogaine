@@ -35,7 +35,7 @@ for i in range(12):
 point_max = 0
 route_max = []
 
-MAX_VISIT = 22
+MAX_VISIT = 49
 # Количество очков, если посетить вершины all_vertexes
 def count_point(all_vertexes):
     ans = 0
@@ -78,12 +78,13 @@ def loss_of_points(time_happen):
 def rec(cur_time, cur_vertex, visited):
     global point_max
     global route_max
-    if cur_vertex == 0 and cur_time <= 220:  # Текущая вершина финиш и мы не затратили более 180 минут
+    if cur_vertex == 0 and cur_time <= 215:  # Текущая вершина финиш и мы не затратили более 215 минут
         new_point = count_point(visited) + loss_of_points(cur_time)
         if new_point > point_max:
             point_max = new_point
             route_max = visited
-    if cur_time >= 220 or len(visited) > MAX_VISIT:
+            print(point_max)
+    if cur_time >= 215 or len(visited) > MAX_VISIT:
         return
     else:
         for child in g[cur_vertex]:
