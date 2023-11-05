@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(10 ** 9)
+sys.setrecursionlimit(10 ** 9) # увеличение глубины рекурсии, так как в питоне изначальный максимум равен 1000
 
 n = 12  # контрольные пункты
 m = 13  # дороги
@@ -35,7 +35,7 @@ for i in range(12):
 point_max = 0
 route_max = []
 
-MAX_VISIT = 18
+MAX_VISIT = 35
 # Количество очков, если посетить вершины all_vertexes
 def count_point(all_vertexes):
     ans = 0
